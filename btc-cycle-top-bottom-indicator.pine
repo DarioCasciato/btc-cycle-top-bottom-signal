@@ -1,0 +1,45 @@
+//@version=5
+indicator(title="Bitcoin Cycle Top/Bottom Signal", shorttitle="BTC Cycle Top/Bottom", overlay=true)
+
+
+// Input Data
+length1 = input.int(111, minval=1, title="Length SMA 1")
+length2 = input.int(350, minval=1, title="Length SMA 2")
+multiplier1 = input.float(2.0, title="Multiplier for SMA 2")
+multiplier2 = input.float(2.414, title="Divisor for Fib SMA")
+
+// Initialize variables
+float sma1 = na
+float sma2 = na
+float fib_sma = na
+bool sellSignal = false
+bool buySignal = false
+
+// Check if the current timeframe is 'D' (Daily)
+if timeframe.isdaily
+    // Calculate moving averages
+    sma1 := ta.sma(close, length1)
+    sma2 := ta.sma(close, length2) * multiplier1
+    fib_sma := ta.sma(close, length2) / multiplier2
+
+    // Detect crossovers
+    sellSignal := ta.crossover(sma1, sma2)
+    buySignal := ta.crossunder(low, fib_sma)
+else
+    // Set variables to 'na' or 'false'
+    sma1 := na
+    sma2 := na
+    fib_sma := na
+    sellSignal := false
+    buySignal := false
+
+// Display signals on the chart with labels at the price line
+if sellSignal
+    label.new(bar_index, high, "Sell", style=label.style_label_down, color=color.new(color.red, 10), textcolor=color.white, size=size.normal)
+if buySignal
+    label.new(bar_index, low, "Buy", style=label.style_label_up, color=color.new(color.green, 10), textcolor=color.white, size=size.normal)
+
+// Plot moving averages
+plot(sma1, color=color.new(#4CAF50, 20), title="111-Day SMA", linewidth=1)
+plot(sma2, color=color.new(#F23645, 20), title="350-Day SMA x2", linewidth=1)
+plot(fib_sma, color=color.new(#8A8B8C, 20), title="350-Day SMA ÷ 2.414", linewidth=1)
