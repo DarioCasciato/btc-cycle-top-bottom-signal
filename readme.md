@@ -1,8 +1,8 @@
-# Bitcoin Cycle Top/Bottom Signal
+# Bitcoin Cycle Top/Bottom Signal (TradingView)
 
 ## Overview
 
-The **Bitcoin Cycle Top/Bottom Signal** indicator is specifically designed to identify potential market tops and bottoms for Bitcoin. By utilizing targeted moving averages and Fibonacci ratios, it aids traders in making strategic decisions within Bitcoin's market cycles.
+The **Bitcoin Cycle Top/Bottom Signal** indicator for TradingView is specifically designed to identify potential market tops and bottoms for Bitcoin. By utilizing targeted moving averages and Fibonacci ratios, it aids traders in making strategic decisions within Bitcoin's market cycles.
 
 ![Snapshot](Snapshot.png)
 
