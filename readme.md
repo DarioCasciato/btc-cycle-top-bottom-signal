@@ -29,8 +29,8 @@ This indicator leverages three key components:
 
 ## Important Notes
 
-- **Daily Chart Only:** This indicator is intended for use exclusively on the Daily timeframe (1D). If applied to other timeframes, it will display a notification message.
-- **Limitations:** The indicator cannot predict unforeseen events, such as Black Swan events (e.g., the FTX crash). Without such events, the last Buy Signal would have been accurate.
+- **Daily Chart Only:** This indicator is intended for use exclusively on the Daily timeframe (1D).
+- **Limitations:** The indicator cannot predict unforeseen events, such as Black Swan events (e.g., the FTX crash). Without such events, the 2022 Buy Signal would have been accurate.
 
 ## Settings
 
